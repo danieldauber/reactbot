@@ -3,5 +3,5 @@ export default {
   dialogFlowSessionID: process.env.DIALOGFLOW_SESSION_ID,
   dialogFlowSessionLanguageCode: process.env.DIALOGFLOW_SESSION_LANGUAGE_CODE,
   googleClientEmail: process.env.DIALOGFLOW_GOOGLE_CLIENT_EMAIL,
-  googlePrivateKey: process.env.DIALOGFLOW_GOOGLE_PRIVATE_KEY,
+  googlePrivateKey: String(process.env.DIALOGFLOW_GOOGLE_PRIVATE_KEY),
 };

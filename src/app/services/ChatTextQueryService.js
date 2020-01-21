@@ -1,22 +1,15 @@
-import dialogFlow from 'dialogflow';
-import keys from '../../config/dialogflow';
+import Dialog from '../lib/DialogFlow';
 
 class ChatTextQueryService {
   async run({ text, parameters = {} }) {
-    const sessionClient = new dialogFlow.SessionsClient();
-    const sessionPath = sessionClient.sessionPath(
-      keys.googleProjectID,
-      keys.dialogFlowSessionID
-    );
-
     const request = {
-      session: sessionPath,
+      session: Dialog.sessionPath,
       queryInput: {
         text: {
           // The query to send to the dialogflow agent
           text,
           // The language used by the client (en-US)
-          languageCode: keys.dialogFlowSessionLanguageCode,
+          languageCode: Dialog.dialogFlowSessionLanguageCode,
         },
       },
       queryParams: {
@@ -27,7 +20,7 @@ class ChatTextQueryService {
     };
 
     // Send request and log result
-    const responses = await sessionClient.detectIntent(request);
+    const responses = await Dialog.sessionClient.detectIntent(request);
     // console.log('Detected intent');
     // //const result = responses[0].queryResult;
     // console.log(`  Query: ${result.queryText}`);
