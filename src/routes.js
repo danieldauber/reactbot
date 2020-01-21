@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import ChatController from './app/controllers/ChatController';
 
-
 const routes = new Router();
 
 routes.get('/', (req, res) => {

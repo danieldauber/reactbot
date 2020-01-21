@@ -1,17 +1,8 @@
 import structjson from 'structjson';
 import Dialog from '../lib/DialogFlow';
 
-// const credentials = {
-//   client_email: dialogflow.googleClientEmail,
-//   private_key: dialogflow.googlePrivateKey
-// }
-
-// const sessionClient = new dialogFlow.SessionsClient({ projectID: dialogflow.googleProjectID, credentials });
-// const sessionPath = sessionClient.sessionPath(dialogflow.googleProjectID, dialogflow.dialogFlowSessionID)
-
-class ChatTextQueryService {
+class ChatEventQueryService {
   async run({ event, parameters = {} }) {
-
     const request = {
       session: Dialog.sessionPath,
       queryInput: {
@@ -23,7 +14,6 @@ class ChatTextQueryService {
           languageCode: Dialog.dialogFlowSessionLanguageCode,
         },
       },
-
     };
 
     // Send request and log result
@@ -42,4 +32,4 @@ class ChatTextQueryService {
   }
 }
 
-export default new ChatTextQueryService();
+export default new ChatEventQueryService();
