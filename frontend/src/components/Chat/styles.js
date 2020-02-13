@@ -15,3 +15,5 @@ export const Chatbox = styled.div`
   padding: 20px;
   height: 400px;
 `;
+
+export const Form = styled.form``;
