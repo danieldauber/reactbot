@@ -1,12 +1,16 @@
 import React from 'react';
 
-import { Container, Author } from './styles';
+import { Container, Message } from './styles';
 
-export default function MessageList({ pos, message, author }) {
+export default function MessageList({ i, message, author }) {
   return (
-    <Container pos={pos}>
-      <Author>{author}</Author>
-      <p>{message}</p>
+    <Container pos={author}>
+      <Message key={i} pos={author}>
+        <div>
+          <div>{author}</div>
+          <p>{message}</p>
+        </div>
+      </Message>
     </Container>
   );
 }
