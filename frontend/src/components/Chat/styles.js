@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PerfectScrollBar from 'react-perfect-scrollbar';
 
 export const Container = styled.div`
   position: fixed;
@@ -59,4 +60,9 @@ export const Message = styled.div`
     padding: 10px 15px;
     margin-bottom: 15px;
   }
+`;
+
+export const Scroll = styled(PerfectScrollBar)`
+  max-height: 400px;
+  padding: 5px 15px;
 `;

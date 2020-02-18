@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default createGlobalStyle`
 
