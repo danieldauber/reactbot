@@ -2,9 +2,9 @@ import structjson from 'structjson';
 import Dialog from '../lib/DialogFlow';
 
 class ChatEventQueryService {
-  async run({ event, parameters = {} }) {
+  async run({ event, userID, parameters = {} }) {
     const request = {
-      session: Dialog.sessionPath,
+      session: Dialog.sessionPath + userID,
       queryInput: {
         event: {
           // The query to send to the dialogflow agent

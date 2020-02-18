@@ -5,6 +5,7 @@ class ChatController {
   async textQuery(req, res) {
     const result = await ChatTextQueryService.run({
       text: req.body.text,
+      userID: req.body.userID,
     });
 
     res.json(result);
@@ -13,6 +14,7 @@ class ChatController {
   async eventQuery(req, res) {
     const result = await ChatEventQueryService.run({
       event: req.body.event,
+      userID: req.body.userID,
     });
 
     res.json(result);

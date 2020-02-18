@@ -1,9 +1,9 @@
 import Dialog from '../lib/DialogFlow';
 
 class ChatTextQueryService {
-  async run({ text, parameters = {} }) {
+  async run({ text, userID, parameters = {} }) {
     const request = {
-      session: Dialog.sessionPath,
+      session: Dialog.sessionPath + userID,
       queryInput: {
         text: {
           // The query to send to the dialogflow agent
